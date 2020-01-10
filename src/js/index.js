@@ -140,7 +140,12 @@ elements.shopping.addEventListener('click', e => {
     }
 });
 
-
+// Clear all item from shopping list
+elements.clear_shopping_list.addEventListener('click',()=>
+{    
+     state.list.deleteAllItem();
+     
+});
 
 
 /** 
@@ -182,15 +187,22 @@ const controlLike = () => {
 // Restore liked recipes on page load
 window.addEventListener('load', () => {
     state.likes = new Likes();
-    
+    state.list =new List();
+
     // Restore likes
     state.likes.readStorage();
+    
+    //Restore shopping list
+    state.list.readStorage();
 
     // Toggle like menu button
     likesView.toggleLikeMenu(state.likes.getNumLikes());
 
     // Render the existing likes
     state.likes.likes.forEach(like => likesView.renderLike(like));
+
+    // Render the existing shopping list
+    state.list.items.forEach(item=>listView.renderItem(item));
 });
 
 

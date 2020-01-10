@@ -121,14 +121,27 @@ body {
   .btn-tiny:not(:last-child) {
     margin-right: .3rem; }
 
+  .btn1 {
+  text-align: center;
+  background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+  border-radius: 10rem;
+  border: none;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.8rem;
+  align-items: center;
+  transition: all .2s;
+    
+  }  
+
 .heading-2 {
   font-size: 1.8rem;
   font-weight: 600;
   color: #F59A83;
   text-transform: uppercase;
   margin-bottom: 2.5rem;
-  text-align: center;
-  transform: skewY(-3deg); }
+  text-align: center; }
 
 .copyright {
   color: #968B87;
