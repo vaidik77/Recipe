@@ -44,4 +44,21 @@ export default class List {
         elements.shopping.innerHTML='';
         this.persistData();
     }
+    download_shopping_list(){
+        var csv='Amount,Unit,Ingredients\n';
+        var data=JSON.parse(localStorage.getItem('list'));
+        data.forEach(row=>{
+            csv +=row.count.toFixed(2);
+            csv +=',';
+            csv +=row.unit;
+            csv +=',';
+            csv +="\"" + row.ingredient + "\"";
+            csv +='\n';
+        });
+        var hiddenElement = document.createElement('a');
+        hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+        hiddenElement.target = '_blank';
+        hiddenElement.download = 'Shopping_List.csv';
+        hiddenElement.click();
+    }
 }

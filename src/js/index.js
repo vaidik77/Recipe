@@ -146,7 +146,9 @@ elements.clear_shopping_list.addEventListener('click',()=>
      state.list.deleteAllItem();
      
 });
-
+elements.download_shopping_list.addEventListener('click',()=>{
+    state.list.download_shopping_list();
+});
 
 /** 
  * LIKE CONTROLLER

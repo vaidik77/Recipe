@@ -9,6 +9,7 @@ export const elements={
     likesMenu: document.querySelector('.likes__field'),
     likesList: document.querySelector('.likes__list'),
     clear_shopping_list: document.querySelector('.clear_shopping_list'),
+    download_shopping_list: document.querySelector('.download_shopping_list')
 };
 export const elementStrings ={
     loader:'loader'
